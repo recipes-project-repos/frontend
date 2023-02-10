@@ -24,11 +24,7 @@ export default function Home() {
             <code className={styles.code}>pages/index.tsx</code>
           </p>
           <div>
-            <Link
-              href="posts/posts"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="posts/posts" target="_blank" rel="noopener noreferrer">
               By{' '}
               <Image
                 src="/vercel.svg"
