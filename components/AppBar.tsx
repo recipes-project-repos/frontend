@@ -37,7 +37,7 @@ export function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" className="app-bar" >
+    <AppBar position="static" className="app-bar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -114,11 +114,13 @@ export function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
-          <Box sx={{
-            flexGrow: 1,
-            display: { xs: 'none', md: 'flex' },
-            justifyContent: { xs: 'none', md: 'end' },
-          }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: { xs: 'none', md: 'end' },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 className="app-bar__button"
@@ -126,9 +128,11 @@ export function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <p className='app-bar__button-links'>
-                  {page === 'My List' && <FavoriteBorderIcon className="app-bar__icons" />}
-                  {page === 'Add New' && <AddIcon  className="app-bar__icons" />}
+                <p className="app-bar__button-links">
+                  {page === 'My List' && (
+                    <FavoriteBorderIcon className="app-bar__icons" />
+                  )}
+                  {page === 'Add New' && <AddIcon className="app-bar__icons" />}
                   {page}
                 </p>
               </Button>
@@ -137,7 +141,10 @@ export function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <Button onClick={handleOpenUserMenu} className="app-bar__log-button" >
+              <Button
+                onClick={handleOpenUserMenu}
+                className="app-bar__log-button"
+              >
                 Log out
               </Button>
             </Tooltip>
