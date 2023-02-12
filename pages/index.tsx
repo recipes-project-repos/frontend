@@ -1,14 +1,12 @@
 /* eslint-disable max-len */
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import { Inter } from '@next/font/google';
+// import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 import AppBar from '@/components/AppBar';
 import Card from '@/components/Card';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
