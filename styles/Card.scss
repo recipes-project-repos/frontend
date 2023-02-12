@@ -1,0 +1,40 @@
+.card {
+  width: 286px;
+  padding: 24px;
+
+  border-radius: 5%;
+
+  &__content {
+    padding: 0;
+    margin-bottom: 24px;
+
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__image {
+      margin-bottom: 24px;
+      border: 1px solid black;
+    }
+  }
+
+  &__actions {
+    padding: 0;
+
+    &--tags {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__detais-button {
+    border: 1px solid black;
+
+    text-transform: none;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
