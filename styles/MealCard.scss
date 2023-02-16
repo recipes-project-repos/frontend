@@ -1,3 +1,12 @@
+.meals-container {
+  margin-top: 100px;
+
+  &__card {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .card {
   width: 286px;
   padding: 24px;
@@ -10,11 +19,13 @@
 
     &__title {
       margin-bottom: 24px;
+      height: 51px;
+
+      font-size: 1.3rem;
     }
 
     &__image {
       margin-bottom: 24px;
-      border: 1px solid black;
     }
   }
 
@@ -23,6 +34,14 @@
 
     &--tags {
       margin-bottom: 24px;
+    }
+
+    &--link {
+      font-family: 'Roboto';
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -36,5 +55,12 @@
       background-color: black;
       color: white;
     }
+  }
+
+  transition: all 0.5s;
+
+  &:hover {
+    -webkit-box-shadow: 2px 5px 14px 5px rgba(0, 0, 0, 0.26);
+    box-shadow: 2px 5px 14px 5px rgba(0, 0, 0, 0.26);
   }
 }

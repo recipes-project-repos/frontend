@@ -1,3 +1,4 @@
+/* eslint-disable curly */
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -5,23 +6,27 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import { Meal } from '../types/Meal';
 
-const cardInfo = {
-  strMeal: 'name',
-  strMealThumb: 'image',
-  strCategory: 'Category',
-  strTags: 'Tag, Tag, Tag, Tag',
-};
+interface Props {
+  meal: Meal;
+}
 
-// const BASE_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a&f=b&f=c';
+export const MealCard: React.FC<Props> = ({ meal }) => {
+  const { strMeal, strMealThumb, strCategory, strTags } = meal;
 
-export default function ImgMediaCard() {
-  const { strMeal, strMealThumb, strCategory, strTags } = cardInfo;
+  const strTagsNomalize = () => {
+    if (strTags) {
+      return strTags
+        .split(',')
+        .slice(0, 3)
+        .map((tag) => `#${tag}`);
+    }
 
-  const strTagsNomalize = strTags
-    .split(', ')
-    .map((tag) => `#${tag[0].toLowerCase()}${tag.slice(1)}`);
+    return ['No tags yet...'];
+  };
+
+  const tags = strTagsNomalize();
 
   return (
     <Card className="card">
@@ -32,7 +37,7 @@ export default function ImgMediaCard() {
           component="div"
           className="card__content__title"
         >
-          Lizard
+          {strMeal}
         </Typography>
 
         <CardMedia
@@ -42,19 +47,21 @@ export default function ImgMediaCard() {
           image={strMealThumb}
           className="card__content__image"
         />
+
         <Typography variant="body2" color="text.secondary">
           {strCategory}
         </Typography>
       </CardContent>
+
       <CardActions className="card__actions card__actions--tags">
-        <Grid container spacing={1}>
-          {strTagsNomalize.map((tag) => (
-            <Grid item key={tag} xs={3}>
-              <a href="/"> {tag} </a>
-            </Grid>
-          ))}
-        </Grid>
+        {tags.map((tag) => (
+          <a href="/" key={tag} className="card__actions card__actions--link">
+            {' '}
+            {tag}{' '}
+          </a>
+        ))}
       </CardActions>
+
       <CardActions className="card__actions">
         <Button size="small" className="card__detais-button">
           Details
@@ -62,4 +69,4 @@ export default function ImgMediaCard() {
       </CardActions>
     </Card>
   );
-}
+};

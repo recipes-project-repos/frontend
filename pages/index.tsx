@@ -1,14 +1,29 @@
 /* eslint-disable max-len */
 import Head from 'next/head';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
-import AppBar from '@/components/AppBar';
-import Card from '@/components/Card';
+import ResponsiveAppBar from '@/components/AppBar';
+import { MealCard } from '@/components/MealCard';
+import { Sidebar } from '@/components/Sidebar';
+import { Meal } from '../types/Meal';
+import { Box, Grid } from '@mui/material';
 
 // const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const [meals, setMeals] = useState<Meal[] | []>([]);
+
+  const loadData = async () => {
+    await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a&f=b')
+      .then((res) => res.json())
+      .then((res2) => setMeals(res2.meals));
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,9 +32,36 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppBar />
+      <ResponsiveAppBar />
+
       <main className={styles.main}>
-        <Card />
+        <Grid container>
+          <Grid item xs={3}>
+            <Sidebar />
+          </Grid>
+          <Grid item xs={9}>
+            <section className="meals-container">
+              <Box
+                display="grid"
+                gridTemplateColumns="repeat(3, 285px)"
+                rowGap={3}
+                columnGap={1}
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                {meals.map((meal: Meal) => (
+                  <Box
+                    gridColumn="span 1"
+                    key={meal.idMeal}
+                    className="meals-container__card"
+                  >
+                    <MealCard meal={meal} />
+                  </Box>
+                ))}
+              </Box>
+            </section>
+          </Grid>
+        </Grid>
       </main>
     </>
   );

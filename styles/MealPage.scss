@@ -1,0 +1,143 @@
+.article {
+  background-color: white;
+
+  font-family: 'Roboto';
+
+  &__container {
+    max-width: 1200px;
+    padding: 100px;
+    margin: 0 auto;
+
+    border: 1px solid blue;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title-actions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    &--title {
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    &--link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      padding: 4px 6px;
+      margin-right: 10px;
+
+      border: 1px solid transparent;
+      border-radius: 4px;
+
+      transition: border-color 0.5s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    &--arrow {
+      display: flex;
+      justify-content: center;
+      width: 1em;
+      padding-left: 5px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    margin: 40px auto;
+
+    border: 1px solid black;
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+
+    &--tag {
+      display: block;
+      width: 49px;
+
+      background: #ffffff;
+
+      border: 1px solid grey;
+
+      font-size: 15px;
+      text-align: center;
+      color: black;
+      text-transform: none;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__info {
+    margin-top: 30px;
+  }
+
+  &__category {
+    font-weight: normal;
+  }
+
+  &__ingredients {
+    margin-top: 30px;
+  }
+
+  &__ingredients-list {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  &__line {
+    margin-top: 30px;
+  }
+
+  &__recipe {
+    margin-top: 30px;
+  }
+
+  &__time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &--text {
+      font-weight: bold;
+    }
+  }
+}
+
+.stars {
+  &__star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    // background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-right: 4px;
+
+    cursor: pointer;
+
+    &--active {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
