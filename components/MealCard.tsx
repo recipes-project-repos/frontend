@@ -55,11 +55,7 @@ export const MealCard: React.FC<Props> = ({ meal }) => {
 
       <CardActions className="card__actions card__actions--tags">
         {tags.map((tag) => (
-          <a
-            href="/"
-            key={tag}
-            className="card__actions--link"
-          >
+          <a href="/" key={tag} className="card__actions--link">
             {tag}
           </a>
         ))}
