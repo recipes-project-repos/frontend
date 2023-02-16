@@ -11,12 +11,12 @@ import {
 import { SortBy } from '../types/SortBy';
 
 interface Props {
-  name: SortBy,
-  items: string[],
-  setSortBy: Dispatch<SetStateAction<string>>,
-  setSortedItems: Dispatch<SetStateAction<string[]>>,
-  sorted: string[],
-  resetAnotherForm: Dispatch<SetStateAction<string[]>>,
+  name: SortBy;
+  items: string[];
+  setSortBy: Dispatch<SetStateAction<string>>;
+  setSortedItems: Dispatch<SetStateAction<string[]>>;
+  sorted: string[];
+  resetAnotherForm: Dispatch<SetStateAction<string[]>>;
 }
 
 export const SelectForm: React.FC<Props> = ({
