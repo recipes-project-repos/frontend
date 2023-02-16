@@ -1,6 +1,5 @@
 /* eslint-disable curly */
 import {
-  Button,
   FormControl,
   Radio,
   RadioGroup,
@@ -9,7 +8,8 @@ import {
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { SortBy } from '../../types/SortBy';
-import { SelectForm } from '../SelectForm/SelectForm';
+import { ButtonMain } from '../ButtonMain';
+import { SelectForm } from '../SelectForm';
 
 const categoriesFromServer = ['one', 'two', 'three'];
 const ingredientsFromServer = ['ingr1', 'ingr2', 'ingr3'];
@@ -101,22 +101,20 @@ export const Sidebar = () => {
             />
           </RadioGroup>
 
-          <Button
-            type="submit"
-            variant="outlined"
-            className="sidebar__button sidebar__button--submit"
-          >
-            Submit
-          </Button>
+          <ButtonMain
+            buttonType="submit"
+            text="Submit"
+            classVariant="sidebar__button sidebar__button--submit"
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
+            onHandleClick={() => {}}
+          />
 
-          <Button
-            type="reset"
-            variant="outlined"
-            className="sidebar__button sidebar__button--reset"
-            onClick={handleReset}
-          >
-            Clear
-          </Button>
+          <ButtonMain
+            buttonType="reset"
+            text="Cleat"
+            classVariant="sidebar__button sidebar__button--reset"
+            onHandleClick={handleReset}
+          />
         </FormControl>
       </div>
     </section>
