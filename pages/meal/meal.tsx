@@ -1,5 +1,5 @@
 import React from 'react';
-import ResponsiveAppBar from '@/components/AppBar';
+import ResponsiveAppBar from '@/components/AppBar/AppBar';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';

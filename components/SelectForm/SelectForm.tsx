@@ -8,7 +8,7 @@ import {
   ListItemText,
   SelectChangeEvent,
 } from '@mui/material';
-import { SortBy } from '../types/SortBy';
+import { SortBy } from '../../types/SortBy';
 
 interface Props {
   name: SortBy;
