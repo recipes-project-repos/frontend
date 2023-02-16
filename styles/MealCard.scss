@@ -16,17 +16,17 @@
   &__content {
     padding: 0;
     margin-bottom: 24px;
+  }
 
-    &__title {
-      margin-bottom: 24px;
-      height: 51px;
+  &__title {
+    margin-bottom: 24px;
+    height: 51px;
 
-      font-size: 1.3rem;
-    }
+    font-size: 1.3rem;
+  }
 
-    &__image {
-      margin-bottom: 24px;
-    }
+  &__image {
+    margin-bottom: 24px;
   }
 
   &__actions {
@@ -45,7 +45,7 @@
     }
   }
 
-  &__detais-button {
+  &__details-button {
     border: 1px solid black;
 
     text-transform: none;
