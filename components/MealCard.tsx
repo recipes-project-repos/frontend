@@ -20,7 +20,7 @@ export const MealCard: React.FC<Props> = ({ meal }) => {
       return strTags
         .split(',')
         .slice(0, 3)
-        .map((tag) => `#${tag}`);
+        .map((tag) => `#${tag} `);
     }
 
     return ['No tags yet...'];
@@ -35,7 +35,7 @@ export const MealCard: React.FC<Props> = ({ meal }) => {
           gutterBottom
           variant="h5"
           component="div"
-          className="card__content__title"
+          className="card__title"
         >
           {strMeal}
         </Typography>
@@ -45,7 +45,7 @@ export const MealCard: React.FC<Props> = ({ meal }) => {
           alt={strMeal}
           height="200"
           image={strMealThumb}
-          className="card__content__image"
+          className="card__image"
         />
 
         <Typography variant="body2" color="text.secondary">
@@ -55,15 +55,18 @@ export const MealCard: React.FC<Props> = ({ meal }) => {
 
       <CardActions className="card__actions card__actions--tags">
         {tags.map((tag) => (
-          <a href="/" key={tag} className="card__actions card__actions--link">
-            {' '}
-            {tag}{' '}
+          <a
+            href="/"
+            key={tag}
+            className="card__actions--link"
+          >
+            {tag}
           </a>
         ))}
       </CardActions>
 
       <CardActions className="card__actions">
-        <Button size="small" className="card__detais-button">
+        <Button size="small" className="card__details-button">
           Details
         </Button>
       </CardActions>

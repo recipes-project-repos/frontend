@@ -16,8 +16,9 @@
   &__content {
     padding: 0;
     margin-bottom: 24px;
+  }
 
-    &__title {
+  &__title {
       margin-bottom: 24px;
       height: 51px;
 
@@ -27,7 +28,6 @@
     &__image {
       margin-bottom: 24px;
     }
-  }
 
   &__actions {
     padding: 0;
@@ -45,7 +45,7 @@
     }
   }
 
-  &__detais-button {
+  &__details-button {
     border: 1px solid black;
 
     text-transform: none;
