@@ -1,5 +1,5 @@
 /* eslint-disable curly */
-import { 
+import {
   Button,
   FormControl,
   Radio,
@@ -43,7 +43,7 @@ export const Sidebar = () => {
       <div className="sidebar">
         <h4>Search by</h4>
 
-        <FormControl sx={{width: '100%'}}>
+        <FormControl sx={{ width: '100%' }}>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             value={sortBy}
@@ -57,7 +57,7 @@ export const Sidebar = () => {
               onChange={() => handleChange('Title')}
             />
             <TextField
-              id='Title'
+              id="Title"
               variant="outlined"
               placeholder="Title"
               value={query}
@@ -65,7 +65,7 @@ export const Sidebar = () => {
               onFocus={() => setHasFocus('Title')}
               onBlur={() => setHasFocus('')}
             />
-            
+
             <FormControlLabel
               id="category"
               value="Category"
@@ -80,7 +80,6 @@ export const Sidebar = () => {
               setSortBy={setSortBy}
               setSortedItems={setCategory}
               sorted={category}
-              onSetHasFocus={setHasFocus}
               resetAnotherForm={setIngredient}
             />
 
@@ -98,12 +97,15 @@ export const Sidebar = () => {
               setSortBy={setSortBy}
               setSortedItems={setIngredient}
               sorted={ingredient}
-              onSetHasFocus={setHasFocus}
               resetAnotherForm={setCategory}
             />
           </RadioGroup>
 
-          <Button type="submit" variant="outlined" className="sidebar__button sidebar__button--submit">
+          <Button
+            type="submit"
+            variant="outlined"
+            className="sidebar__button sidebar__button--submit"
+          >
             Submit
           </Button>
 
