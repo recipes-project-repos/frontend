@@ -42,31 +42,30 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={9}>
-            {meals.length === 0
-              ? <Loader />
-              : (
-                <section className="meals-container">
-                  <Box
-                    display="grid"
-                    gridTemplateColumns="repeat(3, 285px)"
-                    rowGap={3}
-                    columnGap={1}
-                    justifyContent="space-evenly"
-                    alignItems="center"
-                  >
-                    {meals.map((meal: Meal) => (
-                      <Box
-                        gridColumn="span 1"
-                        key={meal.idMeal}
-                        className="meals-container__card"
-                      >
-                        <MealCard meal={meal} />
-                      </Box>
-                    ))}
-                  </Box>
-                </section>
-              )
-            }
+            {meals.length === 0 ? (
+              <Loader />
+            ) : (
+              <section className="meals-container">
+                <Box
+                  display="grid"
+                  gridTemplateColumns="repeat(3, 285px)"
+                  rowGap={3}
+                  columnGap={1}
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                >
+                  {meals.map((meal: Meal) => (
+                    <Box
+                      gridColumn="span 1"
+                      key={meal.idMeal}
+                      className="meals-container__card"
+                    >
+                      <MealCard meal={meal} />
+                    </Box>
+                  ))}
+                </Box>
+              </section>
+            )}
           </Grid>
         </Grid>
       </main>
