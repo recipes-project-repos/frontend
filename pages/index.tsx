@@ -3,11 +3,12 @@ import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 // import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
-import ResponsiveAppBar from '@/components/AppBar';
-import { MealCard } from '@/components/MealCard';
-import { Sidebar } from '@/components/Sidebar';
+import ResponsiveAppBar from '@/components/AppBar/AppBar';
+import { MealCard } from '@/components/MealCard/MealCard';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { Meal } from '../types/Meal';
 import { Box, Grid } from '@mui/material';
+import { Loader } from '@/components/Loader';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -39,27 +40,32 @@ export default function Home() {
           <Grid item xs={3}>
             <Sidebar />
           </Grid>
+
           <Grid item xs={9}>
-            <section className="meals-container">
-              <Box
-                display="grid"
-                gridTemplateColumns="repeat(3, 285px)"
-                rowGap={3}
-                columnGap={1}
-                justifyContent="space-evenly"
-                alignItems="center"
-              >
-                {meals.map((meal: Meal) => (
-                  <Box
-                    gridColumn="span 1"
-                    key={meal.idMeal}
-                    className="meals-container__card"
-                  >
-                    <MealCard meal={meal} />
-                  </Box>
-                ))}
-              </Box>
-            </section>
+            {meals.length === 0 ? (
+              <Loader />
+            ) : (
+              <section className="meals-container">
+                <Box
+                  display="grid"
+                  gridTemplateColumns="repeat(3, 285px)"
+                  rowGap={3}
+                  columnGap={1}
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                >
+                  {meals.map((meal: Meal) => (
+                    <Box
+                      gridColumn="span 1"
+                      key={meal.idMeal}
+                      className="meals-container__card"
+                    >
+                      <MealCard meal={meal} />
+                    </Box>
+                  ))}
+                </Box>
+              </section>
+            )}
           </Grid>
         </Grid>
       </main>

@@ -8,8 +8,8 @@ import {
   TextField,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { SortBy } from '../types/SortBy';
-import { SelectForm } from './SelectForm';
+import { SortBy } from '../../types/SortBy';
+import { SelectForm } from '../SelectForm/SelectForm';
 
 const categoriesFromServer = ['one', 'two', 'three'];
 const ingredientsFromServer = ['ingr1', 'ingr2', 'ingr3'];
