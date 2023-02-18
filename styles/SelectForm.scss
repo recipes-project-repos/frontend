@@ -1,0 +1,13 @@
+.select-form {
+  display: block;
+  max-width: 250px;
+
+  margin-top: 20px;
+
+  &__input {
+    width: 100%;
+
+    background-color: white;
+    border-radius: 3px;
+  }
+}

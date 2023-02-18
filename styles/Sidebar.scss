@@ -9,7 +9,8 @@
   width: 25%;
   height: 100vh;
 
-  background-color: white;
+  background-color: $slider-theme;
+  color: white;
 }
 
 .sidebar {
@@ -17,11 +18,12 @@
 
   margin-top: 100px;
 
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
+  @include main-font;
+
+  &__title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
 
   &__button {
     height: 50px;
@@ -31,11 +33,11 @@
 
       border: 1px solid transparent;
 
-      background-color: black;
-      color: white;
+      background-color: $main-dark-color;
+      color: $hover-text-color;
 
       &:hover {
-        border: 1px solid black;
+        border: 1px solid $main-dark-color;
 
         background-color: grey;
       }
@@ -44,16 +46,16 @@
     &--reset {
       margin-top: 20px;
 
-      border: 1px solid black;
+      // border: 1px solid $main-dark-color;
 
-      background-color: white;
-      color: black;
+      background-color: $main-contrast-color;
+      color: $main-text-color;
 
       &:hover {
-        border: 1px solid grey;
+        border: none;
 
-        background-color: whitesmoke;
-        color: black;
+        background-color: $main-dark-color;
+        color: $hover-text-color;
       }
     }
   }

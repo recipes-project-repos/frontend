@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Button,
+  Container,
+  Tooltip,
+  MenuItem,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddIcon from '@mui/icons-material/Add';
+import Link from 'next/link';
 
 const pages = ['My List', 'Add New'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-export function ResponsiveAppBar() {
+interface Props {
+  barStyle: string;
+}
+
+export const ResponsiveAppBar: React.FC<Props> = ({ barStyle }) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -70,6 +77,7 @@ export function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -95,6 +103,7 @@ export function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -114,6 +123,7 @@ export function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -121,22 +131,29 @@ export function ResponsiveAppBar() {
               justifyContent: { xs: 'none', md: 'end' },
             }}
           >
-            {pages.map((page) => (
+            <Link href="/my-list/favorites" className="app-bar__link">
               <Button
-                className="app-bar__button"
-                key={page}
+                className={barStyle}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 <p className="app-bar__button-links">
-                  {page === 'My List' && (
-                    <FavoriteBorderIcon className="app-bar__icons" />
-                  )}
-                  {page === 'Add New' && <AddIcon className="app-bar__icons" />}
-                  {page}
+                  <FavoriteBorderIcon className="app-bar__icons" />
+                  My List
                 </p>
               </Button>
-            ))}
+            </Link>
+
+            <Button
+              className="app-bar__button app-bar__link"
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              <p className="app-bar__button-links">
+                <AddIcon className="app-bar__icons" />
+                Add new
+              </p>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -175,5 +192,6 @@ export function ResponsiveAppBar() {
       </Container>
     </AppBar>
   );
-}
+};
+
 export default ResponsiveAppBar;

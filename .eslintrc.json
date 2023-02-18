@@ -20,7 +20,7 @@
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "curly": ["error", "multi", "consistent"],
+    "curly": "error",
     "default-case": "error",
     "eqeqeq": ["error", "always"],
     "no-else-return": "error",

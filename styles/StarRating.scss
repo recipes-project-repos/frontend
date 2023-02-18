@@ -1,0 +1,29 @@
+.star-rating {
+  &--on {
+    background-image: url(../images/star-active.svg);
+  }
+
+  &--off {
+    background-image: url(../images/star.svg);
+  }
+
+  &__star {
+    width: 20px;
+    height: 20px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.star-button {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
