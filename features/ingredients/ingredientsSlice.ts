@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getIngredients } from '@/api/ingredients';
+import { Category } from '@/types/Category';
 
 export const loadIngredients = createAsyncThunk('ingredients/get', () =>
   getIngredients(),
@@ -18,7 +19,7 @@ export const ingredientsSlice = createSlice({
   name: 'ingredients',
   initialState,
   reducers: {
-    set: (state, action: PayloadAction<string[]>) => {
+    set: (state, action: PayloadAction<Category[]>) => {
       state.ingredients = action.payload;
     },
   },
