@@ -1,14 +1,15 @@
 .article {
-  background-color: white;
+  background-color: $background-theme;
 
-  font-family: 'Roboto';
+  @include main-font;
+  font-size: 1rem;
 
   &__container {
     max-width: 1200px;
     padding: 100px;
     margin: 0 auto;
 
-    border: 1px solid blue;
+    background-color: $main-contrast-color;
   }
 
   &__box {
@@ -41,7 +42,7 @@
       transition: border-color 0.5s;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
+        background-color: $light-hover;
       }
     }
 
@@ -55,10 +56,17 @@
 
   &__image {
     width: 100%;
-    height: 300px;
-    margin: 40px auto;
+    height: 100%;
+  }
 
-    border: 1px solid black;
+  &__image-box {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    // background-color: $background-theme;
+    // border-radius: 10px;
+    padding: 0 20px;
   }
 
   &__tags {
@@ -68,47 +76,76 @@
 
     &--tag {
       display: block;
-      width: 49px;
+      width: max-content;
 
       background: #ffffff;
-
       border: 1px solid grey;
 
       font-size: 15px;
       text-align: center;
-      color: black;
+      color: $main-text-color;
       text-transform: none;
     }
   }
 
-  &__stars {
+  &__facts {
     display: flex;
-    gap: 5px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+
+    width: 100%;
+    padding: 30px 40px;
   }
 
   &__info {
-    margin-top: 30px;
+    margin-top: $meal-page-margins;
   }
 
   &__category {
     font-weight: normal;
   }
 
+  &__youtube {
+    text-decoration: underline;
+  }
+
+  &__hours {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
   &__ingredients {
-    margin-top: 30px;
+    margin-top: $meal-page-margins;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__ingredients-list {
-    margin-top: 15px;
+    margin-top: $meal-page-margins / 2;
     margin-left: 15px;
+    font-size: 18px;
   }
 
   &__line {
-    margin-top: 30px;
+    margin-top: $meal-page-margins + 10;
   }
 
   &__recipe {
-    margin-top: 30px;
+    margin-top: $meal-page-margins;
+    margin-left: 15px;
+    font-weight: 600;
+  }
+
+  &__recipe-steps {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  &__recipe-steps span {
+    font-weight: 400;
   }
 
   &__time {
@@ -121,23 +158,14 @@
       font-weight: bold;
     }
   }
-}
 
-.stars {
-  &__star {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    // background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+  &__steps {
+    display: block;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
 
-    margin-right: 4px;
-
-    cursor: pointer;
-
-    &--active {
-      background-image: url(../images/star-active.svg);
-    }
+  &__video {
+    border: none;
   }
 }

@@ -1,0 +1,30 @@
+@mixin box-shadow {
+  -webkit-box-shadow: 2px 5px 14px 5px rgba(0, 0, 0, 0.26);
+  box-shadow: 2px 5px 14px 5px rgba(0, 0, 0, 0.26);
+}
+
+@mixin like-dislike {
+  position: absolute;
+  z-index: 2;
+  top: 91%;
+  left: 85%;
+  width: 20px;
+  height: 20px;
+
+  background-size: contain;
+
+  transition: all 0.5s;
+}
+
+@mixin app-bar-hover {
+  background-color: $main-contrast-color;
+  color: $main-dark-color;
+}
+
+@mixin main-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}

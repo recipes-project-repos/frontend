@@ -1,17 +1,33 @@
 .app-bar {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 
   padding: 0 100px;
-  background-color: black;
+  background-color: $main-dark-color;
+
+  &__link {
+    margin-right: 50px;
+  }
 
   &__button {
-    margin-right: 50px;
     text-transform: none;
     border: 1px solid transparent;
 
     &:hover {
-      border: 1px solid white;
+      border: 1px solid $main-contrast-color;
+    }
+
+    &:active {
+      @include app-bar-hover;
+    }
+
+    &--hover {
+      @include app-bar-hover;
+
+      &:hover {
+        border: 1px solid $main-contrast-color;
+        color: $hover-text-color;
+      }
     }
   }
 
@@ -19,29 +35,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 3px;
   }
 
   &__icons {
     margin-right: 5px;
-
-    &--hover {
-      background-color: wheat;
-    }
   }
 
   &__log-button {
     padding: 5px 40px;
 
-    border: 2px solid white;
+    border: 2px solid $main-contrast-color;
 
-    color: white;
+    color: $hover-text-color;
     text-transform: none;
 
     transition: all 0.5;
 
     &:hover {
-      background-color: white;
-      color: black;
+      @include app-bar-hover;
     }
   }
 }
